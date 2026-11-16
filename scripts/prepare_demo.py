@@ -17,7 +17,7 @@ def inject_warnings(target):
         text = path.read_text(encoding='utf-8')
         ending = text.index('"""', 3) + 3
         text = text[:ending] + '\n\nimport os\nimport tempfile\n' + text[ending:]
-        text += '\n\n## @brief Demo diagnostic label with an excessive line length.\n'
+        text += '\n\n"""! @brief Demo diagnostic label with excessive line length."""\n'
         text += f'DIAGNOSTIC_LABEL_{index} = ' + repr('vehicle-access-diagnostic-' * 6) + '\n'
         text += '\n\ndef is_missing_sensor(value):\n'
         text += '    """! @brief Demo legacy sensor validity check with E711."""\n'

@@ -1,3 +1,4 @@
+-c constraints.txt
 pytest==9.2.0
 flake8==7.5.0
 lizard==1.26.0

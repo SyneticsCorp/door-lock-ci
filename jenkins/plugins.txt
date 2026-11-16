@@ -1,6 +1,6 @@
-git
-junit
-warnings-ng
-workflow-aggregator
-pipeline-stage-view
-timestamper
+git:5.11.0
+junit:1458.1460.vd53b_087eeb_2c
+warnings-ng:13.10365.v85cd7a_c8110b_
+workflow-aggregator:608.v67378e9d3db_1
+pipeline-stage-view:2.41
+timestamper:1.30
