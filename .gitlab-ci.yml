@@ -1,0 +1,21 @@
+stages: [test, analysis]
+default:
+  image: python:3.15
+  before_script:
+    - python -m pip install -r requirements-dev.txt
+unit_test:
+  stage: test
+  script:
+    - python scripts/ci.py test
+    - python scripts/ci.py test --suite product --reports reports/product
+  artifacts:
+    when: always
+    paths: [reports/]
+    reports:
+      junit: [reports/junit.xml, reports/product/junit.xml]
+static_analysis:
+  stage: analysis
+  script:
+    - python -m flake8 doorlock tests vehicle_access product_tests scripts
+    - python -m lizard doorlock vehicle_access scripts -C 10
+

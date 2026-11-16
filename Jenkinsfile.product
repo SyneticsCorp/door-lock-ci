@@ -1,0 +1,60 @@
+// @file Jenkinsfile.product
+// @brief Product validation and isolated warning/complexity demonstrations.
+def runPython(String arguments) {
+    if (isUnix()) { sh ".venv/bin/python ${arguments}" }
+    else { bat ".venv\\Scripts\\python.exe ${arguments}" }
+}
+def checkArguments() {
+    return "--suite product --source ${env.SOURCE_DIR} --reports reports/product"
+}
+pipeline {
+    agent any
+    options { disableConcurrentBuilds(); timestamps() }
+    parameters { choice(name: 'SCENARIO', choices: ['clean', 'warnings', 'complexity'],
+                        description: 'Clean product or an isolated quality gate demonstration') }
+    environment { SOURCE_DIR = '.' }
+    stages {
+        stage('Setup') {
+            steps {
+                dir('reports') { deleteDir() }
+                script {
+                    if (isUnix()) { sh 'python3 -m venv .venv' }
+                    else { bat 'python -m venv .venv' }
+                    runPython('-m pip install -r requirements-dev.txt')
+                    if (params.SCENARIO != 'clean') {
+                        runPython("scripts/prepare_demo.py ${params.SCENARIO} reports/demo-source")
+                        env.SOURCE_DIR = 'reports/demo-source'
+                    }
+                }
+            }
+        }
+        stage('Unit Test') {
+            steps { script {
+                def coverageOption = params.SCENARIO == 'clean' ? '' : '--no-coverage'
+                runPython("scripts/ci.py test ${checkArguments()} ${coverageOption}")
+            } }
+        }
+        stage('Static Analysis') {
+            steps { script { runPython("scripts/ci.py lint ${checkArguments()} --collect") } }
+        }
+        stage('Complexity') {
+            steps { script { runPython("scripts/ci.py complexity ${checkArguments()}") } }
+        }
+    }
+    post {
+        always {
+            script {
+                if (fileExists('reports/product/junit.xml')) {
+                    junit testResults: 'reports/product/junit.xml', allowEmptyResults: false
+                }
+                if (fileExists('reports/product/flake8.txt')) {
+                    recordIssues enabledForFailure: true, failOnError: true,
+                        tool: flake8(pattern: 'reports/product/flake8.txt'),
+                        qualityGates: [[threshold: 1, type: 'TOTAL', criticality: 'FAILURE']]
+                }
+            }
+            archiveArtifacts artifacts: 'reports/product/*', allowEmptyArchive: true
+        }
+    }
+}
+

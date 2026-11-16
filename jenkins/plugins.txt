@@ -1,0 +1,6 @@
+git
+junit
+warnings-ng
+workflow-aggregator
+pipeline-stage-view
+timestamper

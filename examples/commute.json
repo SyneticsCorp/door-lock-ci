@@ -1,0 +1,10 @@
+[
+  {"command": "open", "name": "front_left", "opened": true},
+  {"command": "open", "name": "front_left", "opened": false},
+  {"command": "child_lock", "name": "rear_right", "enabled": true},
+  {"command": "speed", "speed_kmh": 14},
+  {"command": "speed", "speed_kmh": 15},
+  {"command": "speed", "speed_kmh": 0},
+  {"command": "unlock", "now": 60},
+  {"command": "tick", "now": 90}
+]
