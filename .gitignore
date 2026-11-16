@@ -17,6 +17,7 @@ htmlcov/
 build/
 dist/
 .local/
+.playwright-cli/
 *.log
 *.war
 *.msi

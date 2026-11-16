@@ -21,7 +21,8 @@ def commands(arguments, reports):
     if product and not arguments.no_coverage:
         test += ['--cov=vehicle_access', '--cov-report=term-missing',
                  f'--cov-report=xml:{reports / "coverage.xml"}']
-    lint = ['flake8', *targets, '--format=pylint',
+    analysis_targets = [str(arguments.source.resolve() / target) for target in targets]
+    lint = ['flake8', *analysis_targets, '--format=pylint',
             f'--output-file={reports / "flake8.txt"}']
     if arguments.collect:
         lint.append('--exit-zero')
