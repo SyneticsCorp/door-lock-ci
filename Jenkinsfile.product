@@ -5,14 +5,14 @@ def runPython(String arguments) {
     else { bat ".venv\\Scripts\\python.exe ${arguments}" }
 }
 def checkArguments() {
-    return "--suite product --source ${env.SOURCE_DIR} --reports reports/product"
+    def source = params.SCENARIO == 'clean' ? '.' : 'reports/demo-source'
+    return "--suite product --source ${source} --reports reports/product"
 }
 pipeline {
     agent any
     options { disableConcurrentBuilds(); timestamps() }
     parameters { choice(name: 'SCENARIO', choices: ['clean', 'warnings', 'complexity'],
                         description: 'Clean product or an isolated quality gate demonstration') }
-    environment { SOURCE_DIR = '.' }
     stages {
         stage('Setup') {
             steps {
@@ -23,7 +23,6 @@ pipeline {
                     runPython('-m pip install -r requirements-dev.txt')
                     if (params.SCENARIO != 'clean') {
                         runPython("scripts/prepare_demo.py ${params.SCENARIO} reports/demo-source")
-                        env.SOURCE_DIR = 'reports/demo-source'
                     }
                 }
             }
