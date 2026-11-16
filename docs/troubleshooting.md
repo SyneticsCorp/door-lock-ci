@@ -11,6 +11,7 @@
 | pip SSL/timeout | 네트워크·프록시·사내 미러·인증서 설정을 확인합니다. TLS 검증을 끄는 대신 승인된 미러를 사용합니다. |
 | Flake8 경고가 항상 0 | `--format=pylint`와 `reports/flake8.txt`를 확인합니다. 실제 F401 주입으로 파싱을 검증합니다. |
 | Red 빌드에서 분석 보고서 없음 | pytest에서 실패하여 다음 단계가 생략되는 정상 동작입니다. JUnit 실패 결과를 확인합니다. |
+| Red 이후 Stage View의 여러 단계가 빨간색 | 플러그인의 집계 표시일 수 있습니다. Console Output의 `skipped due to earlier failure(s)`와 최초 Unit Test 실패를 확인합니다. |
 | 테스트는 통과했는데 Gate 실패 | 경고 1건 이상을 차단하는 의도된 동작입니다. Warnings NG 규칙·파일·행 상세를 확인합니다. |
 | 제품 테스트가 기본 pytest에 안 나옴 | 교재의 3/5건을 유지하기 위한 구성입니다. `python scripts/ci.py test --suite product --reports reports/product`를 사용합니다. |
 | warnings 시연에서 경고 외 실패 | 복제본에 원본의 코드 규칙 오류가 섞였는지 확인합니다. 정상 main에서 새 빌드를 시작합니다. |

@@ -1,0 +1,449 @@
+{
+  "checkedAt": "2026-11-16T20:52:22.917171+09:00",
+  "repository": "https://github.com/SyneticsCorp/door-lock-ci",
+  "validatedCodeCommit": "ce4e0279180e99c5a51cf75e1d4b38361a9cbacc",
+  "classroomOrigin": "isolated local Git remote; commits pushed and SCM polling triggered builds",
+  "classroom": [
+    {
+      "state": "prepare",
+      "job": "rehearsal-freestyle",
+      "number": 1,
+      "commit": "0e76a3e9d2acb8d11c9178f97724499fad36666a",
+      "result": "SUCCESS",
+      "passed": 3,
+      "failed": 0,
+      "warnings": 0,
+      "causes": [
+        "Cause$UserIdCause"
+      ],
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": true
+    },
+    {
+      "state": "prepare",
+      "job": "rehearsal-pipeline",
+      "number": 1,
+      "commit": "0e76a3e9d2acb8d11c9178f97724499fad36666a",
+      "result": "SUCCESS",
+      "passed": 3,
+      "failed": 0,
+      "warnings": 0,
+      "causes": [
+        "Cause$UserIdCause"
+      ],
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": true
+    },
+    {
+      "state": "red",
+      "job": "rehearsal-freestyle",
+      "number": 2,
+      "commit": "958f783876848ec45a78ce115228ad8726caf8a6",
+      "result": "FAILURE",
+      "passed": 4,
+      "failed": 1,
+      "warnings": 0,
+      "causes": [
+        "SCMTrigger$SCMTriggerCause"
+      ],
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": false
+    },
+    {
+      "state": "red",
+      "job": "rehearsal-pipeline",
+      "number": 2,
+      "commit": "958f783876848ec45a78ce115228ad8726caf8a6",
+      "result": "FAILURE",
+      "passed": 4,
+      "failed": 1,
+      "warnings": null,
+      "causes": [
+        "SCMTrigger$SCMTriggerCause"
+      ],
+      "qualityGates": null,
+      "skippedStages": [
+        "Static Analysis",
+        "Complexity"
+      ],
+      "analysisExecuted": false
+    },
+    {
+      "state": "green",
+      "job": "rehearsal-freestyle",
+      "number": 3,
+      "commit": "9c193b9570abfeebf5f8b1c84ac9350a4cb2406f",
+      "result": "SUCCESS",
+      "passed": 5,
+      "failed": 0,
+      "warnings": 0,
+      "causes": [
+        "SCMTrigger$SCMTriggerCause"
+      ],
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": true
+    },
+    {
+      "state": "green",
+      "job": "rehearsal-pipeline",
+      "number": 3,
+      "commit": "9c193b9570abfeebf5f8b1c84ac9350a4cb2406f",
+      "result": "SUCCESS",
+      "passed": 5,
+      "failed": 0,
+      "warnings": 0,
+      "causes": [
+        "SCMTrigger$SCMTriggerCause"
+      ],
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": true
+    },
+    {
+      "state": "gate",
+      "job": "rehearsal-freestyle",
+      "number": 4,
+      "commit": "819e89a3a35b716bd6fa601cbb8d9eb1267b7722",
+      "result": "FAILURE",
+      "passed": 5,
+      "failed": 0,
+      "warnings": 1,
+      "causes": [
+        "SCMTrigger$SCMTriggerCause",
+        "SCMTrigger$SCMTriggerCause"
+      ],
+      "qualityGates": {
+        "overallResult": "FAILED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "FAILURE",
+            "threshold": 1.0,
+            "value": "1"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": true
+    },
+    {
+      "state": "gate",
+      "job": "rehearsal-pipeline",
+      "number": 4,
+      "commit": "819e89a3a35b716bd6fa601cbb8d9eb1267b7722",
+      "result": "FAILURE",
+      "passed": 5,
+      "failed": 0,
+      "warnings": 1,
+      "causes": [
+        "SCMTrigger$SCMTriggerCause"
+      ],
+      "qualityGates": {
+        "overallResult": "FAILED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "FAILURE",
+            "threshold": 1.0,
+            "value": "1"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": true
+    },
+    {
+      "state": "restore",
+      "job": "rehearsal-freestyle",
+      "number": 5,
+      "commit": "c581f456d63a33edfb25fb7f714de7f786961d1c",
+      "result": "SUCCESS",
+      "passed": 5,
+      "failed": 0,
+      "warnings": 0,
+      "causes": [
+        "SCMTrigger$SCMTriggerCause"
+      ],
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": true
+    },
+    {
+      "state": "restore",
+      "job": "rehearsal-pipeline",
+      "number": 5,
+      "commit": "c581f456d63a33edfb25fb7f714de7f786961d1c",
+      "result": "SUCCESS",
+      "passed": 5,
+      "failed": 0,
+      "warnings": 0,
+      "causes": [
+        "SCMTrigger$SCMTriggerCause"
+      ],
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "skippedStages": [],
+      "analysisExecuted": true
+    }
+  ],
+  "product": [
+    {
+      "scenario": "warnings",
+      "job": "vehicle-access-product",
+      "number": 7,
+      "result": "FAILURE",
+      "passed": 106,
+      "failed": 0,
+      "warnings": 20,
+      "qualityGates": {
+        "overallResult": "FAILED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "FAILURE",
+            "threshold": 1.0,
+            "value": "20"
+          }
+        ]
+      },
+      "stages": [
+        {
+          "name": "Declarative: Checkout SCM",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Setup",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Unit Test",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Static Analysis",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Complexity",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Declarative: Post Actions",
+          "status": "FAILED"
+        }
+      ],
+      "scmCommits": [
+        "ce4e0279180e99c5a51cf75e1d4b38361a9cbacc"
+      ]
+    },
+    {
+      "scenario": "complexity",
+      "job": "vehicle-access-product",
+      "number": 8,
+      "result": "FAILURE",
+      "passed": 106,
+      "failed": 0,
+      "warnings": 0,
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "stages": [
+        {
+          "name": "Declarative: Checkout SCM",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Setup",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Unit Test",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Static Analysis",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Complexity",
+          "status": "FAILED"
+        },
+        {
+          "name": "Declarative: Post Actions",
+          "status": "SUCCESS"
+        }
+      ],
+      "scmCommits": [
+        "ce4e0279180e99c5a51cf75e1d4b38361a9cbacc"
+      ]
+    },
+    {
+      "scenario": "clean",
+      "job": "vehicle-access-product",
+      "number": 9,
+      "result": "SUCCESS",
+      "passed": 106,
+      "failed": 0,
+      "warnings": 0,
+      "qualityGates": {
+        "overallResult": "PASSED",
+        "resultItems": [
+          {
+            "qualityGate": "Total (any severity)",
+            "result": "SUCCESS",
+            "threshold": 1.0,
+            "value": "0"
+          }
+        ]
+      },
+      "stages": [
+        {
+          "name": "Declarative: Checkout SCM",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Setup",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Unit Test",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Static Analysis",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Complexity",
+          "status": "SUCCESS"
+        },
+        {
+          "name": "Declarative: Post Actions",
+          "status": "SUCCESS"
+        }
+      ],
+      "scmCommits": [
+        "ce4e0279180e99c5a51cf75e1d4b38361a9cbacc"
+      ]
+    }
+  ],
+  "environment": {
+    "jenkins": "2.580.2",
+    "java": "Eclipse Temurin 25.0.5+8",
+    "python": "3.15.2",
+    "serviceAccount": "NT AUTHORITY\\LocalService",
+    "activePlugins": 78,
+    "failedPlugins": 0
+  },
+  "restartPersistence": {
+    "passed": true,
+    "jobsRetained": 5,
+    "junitFailureRetained": true,
+    "warningCountRetained": 20
+  },
+  "ui": {
+    "stageView": true,
+    "junitFailureDetail": true,
+    "warningsList": 20,
+    "warningSourceMatchesAnalyzedFile": true
+  },
+  "githubActions": {
+    "runId": 43860774895,
+    "url": "https://github.com/SyneticsCorp/door-lock-ci/actions/runs/43860774895",
+    "result": "success",
+    "matrix": {
+      "os": [
+        "ubuntu-latest",
+        "windows-latest"
+      ],
+      "python": [
+        "3.12",
+        "3.14",
+        "3.15"
+      ]
+    }
+  },
+  "gitlabExecution": "not performed; comparison/portability configuration only",
+  "forkVerification": "public repository supports forks; new clone tested; student must use a different owner account"
+}
