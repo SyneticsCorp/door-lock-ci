@@ -16,6 +16,7 @@ unit_test:
 static_analysis:
   stage: analysis
   script:
-    - python -m flake8 doorlock tests vehicle_access product_tests scripts
-    - python -m lizard doorlock vehicle_access scripts -C 10
+    - python scripts/check_classroom_demo.py
+    - python -m flake8 doorlock tests vehicle_access product_tests scripts --extend-exclude door_warning.py
+    - python -m lizard doorlock vehicle_access scripts -C 10 -x "*door_warning.py"
 

@@ -8,13 +8,13 @@
 | 198 | 환경·규칙을 코드로 관리 | `requirements.txt`, `pytest.ini`, `.flake8`, `.gitignore` |
 | 199 | Jenkins Pipeline | `Jenkinsfile` |
 | 200 | GitHub Actions / GitLab CI 비교 | `.github/workflows/ci.yml`, `.gitlab-ci.yml` |
-| 201~212 | 환경, Fork/Clone, Python과 로컬 도구 | README, 수강자 안내 1 |
+| 201~212 | 환경, Fork/Clone, Python과 로컬 도구 | README, 수강자 안내 1~2 |
 | 213~228 | Windows Java/Jenkins 설치, Home 설정 | 강사 안내 설치, 문제 해결 |
 | 229~242 | 관리자 설정, 플러그인, Git 경로 | `jenkins/plugins.txt`, 강사 안내 |
-| 243~252 | Freestyle, 테스트, JUnit | 수강자 안내 2 |
-| 253~260 | Red → Green | 수강자 안내 3~4 |
-| 261~271 | Flake8, Warnings NG | `.flake8`, 수강자 안내 5 |
-| 272~277 | TOTAL 경고 게이트, Lizard | `Jenkinsfile`, `scripts/ci.py`, 수강자 안내 5 |
+| 243~252 | Freestyle, 테스트, JUnit | 수강자 안내 3 |
+| 253~260 | Red → Green (확장 실습) | 수강자 안내 7 |
+| 261~271 | Flake8, Warnings NG | `.flake8`, `doorlock/door_warning.py`, 수강자 안내 4 |
+| 272~277 | TOTAL 경고 게이트, Lizard, 위반 해결 후 재빌드 | `doorlock/door_warning.py`, `fixes/door_warning.py`, `Jenkinsfile`, `scripts/ci.py`, 수강자 안내 4~5 |
 | 278~283 | Pipeline script from SCM, Stage View | `Jenkinsfile`, 수강자 안내 6 |
 | 284~286 | 문제 해결, 결과와 증거 회고 | 문제 해결, 검증 기록 |
 

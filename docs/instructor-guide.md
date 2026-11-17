@@ -49,9 +49,14 @@ Python PATH를 바꾼 뒤에는 새 터미널뿐 아니라 Jenkins 서비스도 
 ## 강의 전 확인표
 
 * 수강자 계정이 원본 저장소를 Fork할 수 있고 Clone URL을 읽을 수 있는지 확인합니다.
-* 기본 상태에서 로컬 명령 네 개를 실행해 3 passed / 경고 0 / 복잡도 통과를 확인합니다.
-* Freestyle에서 준비·Red·Green·Gate·복구 순서로 실행합니다.
-* Pipeline에서도 같은 순서를 실행하고 Stage View 및 JUnit 게시를 확인합니다.
+* 기본 상태에서 로컬 명령 네 개를 실행해 3 passed / Flake8 경고 5건 / Lizard `select_door_warning` 경고(종료 코드 1)를 확인합니다.
+  `python scripts/check_classroom_demo.py`가 같은 기대 결과를 한 번에 검사합니다.
+* Freestyle에서 pytest(3 passed, SUCCESS) → Flake8 게시(경고 5건, SUCCESS) → Quality Gate·Lizard 추가(FAILURE) 순서로 실행합니다.
+* 리허설용 Fork에서 `fixes/door_warning.py` 내용을 `doorlock/door_warning.py`에 붙여 넣어 GitHub 웹으로 커밋하고,
+  Poll SCM 빌드가 경고 0건·Lizard 통과·SUCCESS로 바뀌는지 확인합니다. 원본 저장소 main에는 붙여 넣지 않습니다.
+* 코드를 고치는 Red·Green은 확장 실습입니다. 할 경우 Red 1 failed, 4 passed / Green 5 passed를 확인합니다.
+* Pipeline에서 붙여 넣기 전에는 Unit Test까지 성공, Complexity 단계 실패, Quality Gate FAILURE를,
+  붙여 넣은 뒤에는 네 단계 성공과 SUCCESS를 확인합니다.
 * 경고 시연에서 Warnings NG에 실제 20건이 표시되고 TOTAL 게이트가 실패하는지 확인합니다.
 * 복잡도 시연에서 CCN 13과 비정상 종료 코드가 빌드를 막는지 확인합니다.
 * 플러그인 재시작 후 이력·보고서가 남는지 확인하고 마지막 빌드는 정상 상태로 둡니다.
