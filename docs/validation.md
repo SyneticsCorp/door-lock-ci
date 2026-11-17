@@ -7,7 +7,8 @@ Windows에서 Jenkins를 **LocalService Windows 서비스**로 실제 실행하�
 
 > 2026-11-17 변경: 수업용 경고 예제 `doorlock/door_warning.py`를 추가했습니다. 아래 기본 실습 기록의
 > '경고 0건', '복구 SUCCESS'는 그 전 코드 기준입니다. 새 기대 결과(Flake8 경고 5건, Lizard 초과 1건)는
-> `scripts/check_classroom_demo.py`가 GitHub Actions에서 확인합니다. Jenkins 재검증은 하지 않았습니다.
+> `scripts/check_classroom_demo.py`가 GitHub Actions에서 확인합니다. 붙여 넣을 고친 판 `fixes/door_warning.py`가
+> 경고 없이 같은 동작을 하는지도 같은 스크립트가 확인합니다. Jenkins 재검증은 하지 않았습니다.
 
 ## 환경과 도구
 

@@ -1,6 +1,6 @@
 """! @file door_warning.py
 @brief 클러스터 도어 경고 문구 선택: 정적 분석과 복잡도 결과를 보여 주는 교육용 코드.
-@details 급하게 기능을 덧붙인 코드의 모습을 일부러 남겼다. 수강자는 고치지 않고 결과만 읽는다.
+@details 급하게 기능을 덧붙인 코드의 모습을 일부러 남겼다. 수강자는 결과를 읽은 뒤 fixes/door_warning.py를 붙여 넣는다.
 Flake8 경고 5건(F401, E501, E711, E712, W291)과 Lizard 복잡도 초과(CCN > 10) 1건이 나온다.
 """
 import os
