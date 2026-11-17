@@ -11,6 +11,7 @@
 | 구분 | 소스 / 테스트 | 실행 결과 |
 |---|---|---|
 | 교재 기본 실습 | `doorlock/`, `tests/` | 준비 3 passed → Red 1 failed, 4 passed → Green 5 passed |
+| 수업용 경고 예제 | `doorlock/door_warning.py` (테스트 없음) | Flake8 경고 5건, Lizard 복잡도 초과 1건 → Quality Gate·Lizard 단계 실패 |
 | 확장 제품 | `vehicle_access/`, `product_tests/` | 106개 테스트, 상태 전이·진단·CLI, 분기 커버리지 검사 |
 | 경고 시연 | `scripts/prepare_demo.py`가 생성한 복제본 | 테스트는 통과하고 Flake8 경고 또는 Lizard 게이트가 실패 |
 
@@ -29,7 +30,9 @@ py -3.15 -m venv .venv
 .\.venv\Scripts\python.exe -m lizard doorlock -C 10
 ```
 
-기본 결과는 `3 passed`, Flake8 경고 0건, Lizard 기준 초과 0건입니다.
+기본 결과는 `3 passed`입니다. Flake8은 `doorlock/door_warning.py`에서 경고 5건(F401, E501, E711, E712, W291)을,
+Lizard는 `select_door_warning`의 순환 복잡도 초과(CCN > 10)를 보여 주고 종료 코드 1로 끝납니다.
+이 파일은 정적 분석·복잡도 결과를 읽기 위한 교육용 예제라 고치지 않습니다. 기대 결과는 `scripts/check_classroom_demo.py`가 CI에서 확인합니다.
 Linux/macOS는 `python3 -m venv .venv`, 이후 `.venv/bin/python`을 사용합니다.
 교재 명령처럼 `python -m pip install -r requirements.txt`로 활성 Python에 설치해도 됩니다.
 

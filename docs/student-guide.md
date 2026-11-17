@@ -15,7 +15,10 @@ python -m flake8 doorlock tests
 python -m lizard doorlock -C 10
 ```
 
-준비 결과: `3 passed`, Flake8 출력 없음, 복잡도 기준 초과 없음.
+준비 결과: `3 passed`.
+Flake8은 `doorlock/door_warning.py`에서 경고 5건(F401, E501, E711, E712, W291)을 출력합니다.
+Lizard는 `select_door_warning`을 순환 복잡도 초과(CCN > 10)로 표시하고 종료 코드 1로 끝납니다.
+`door_warning.py`는 결과를 읽기 위한 교육용 예제입니다. 고치지 않습니다.
 Python 버전은 `python --version`, 위치는 `where.exe python`으로 확인합니다.
 PowerShell에서는 `where` 대신 `where.exe`를 사용합니다.
 
@@ -93,10 +96,11 @@ python -m lizard doorlock -C 10
 * **Publish issues when build is failed** 옵션을 켭니다.
 * **Fail the build on errors** 옵션을 켭니다. 보고서 누락·파싱 오류를 경고 0건으로 오인하지 않습니다.
 
-`door_lock.py` 첫 줄에 `import os` 한 줄을 넣고 커밋·푸시합니다.
-기대 결과: 테스트 **5 passed**, Flake8 **F401 1건**, Quality Gate **FAILURE**.
-경고 목록에서 파일·행·규칙·메시지를 열어 봅니다.
-해당 import를 삭제하고 커밋·푸시하면 SUCCESS로 복구됩니다.
+코드는 고치지 않고 빌드합니다.
+기대 결과: 테스트 통과(3 passed, Red·Green을 했다면 5 passed), Flake8 **경고 5건**, Quality Gate **FAILURE**,
+Lizard 단계는 `select_door_warning`의 복잡도 초과로 종료 코드 1. **테스트는 통과했는데 빌드는 실패합니다.**
+경고 목록에서 파일·행·규칙·메시지를, Console Output에서 Lizard 경고 줄을 열어 봅니다.
+게이트 설정 전(Flake8 게시만 한 상태)에는 경고 5건이 보여도 빌드는 SUCCESS입니다.
 
 ## 6. Pipeline으로 다시 실행
 
@@ -107,6 +111,7 @@ Script Path **Jenkinsfile**을 설정합니다. 첫 Build Now 이후 Poll SCM이
 
 Stage View에서 Setup → Unit Test → Static Analysis → Complexity를 확인합니다.
 Red는 Unit Test에서 실패하므로 뒤 단계는 생략되며, JUnit 결과는 계속 게시됩니다.
+테스트가 통과하면 Complexity 단계가 `door_warning.py`의 Lizard 경고로 실패하고, post의 Quality Gate도 경고 5건으로 FAILURE를 냅니다.
 `reports/`가 매 빌드 비워지므로 이전 경고 파일이 Red 빌드에 섞이지 않습니다.
 
 ## 7. 더 많은 결과 살펴보기

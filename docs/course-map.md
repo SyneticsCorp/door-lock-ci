@@ -13,8 +13,8 @@
 | 229~242 | 관리자 설정, 플러그인, Git 경로 | `jenkins/plugins.txt`, 강사 안내 |
 | 243~252 | Freestyle, 테스트, JUnit | 수강자 안내 2 |
 | 253~260 | Red → Green | 수강자 안내 3~4 |
-| 261~271 | Flake8, Warnings NG | `.flake8`, 수강자 안내 5 |
-| 272~277 | TOTAL 경고 게이트, Lizard | `Jenkinsfile`, `scripts/ci.py`, 수강자 안내 5 |
+| 261~271 | Flake8, Warnings NG | `.flake8`, `doorlock/door_warning.py`, 수강자 안내 5 |
+| 272~277 | TOTAL 경고 게이트, Lizard | `doorlock/door_warning.py`, `Jenkinsfile`, `scripts/ci.py`, 수강자 안내 5 |
 | 278~283 | Pipeline script from SCM, Stage View | `Jenkinsfile`, 수강자 안내 6 |
 | 284~286 | 문제 해결, 결과와 증거 회고 | 문제 해결, 검증 기록 |
 
